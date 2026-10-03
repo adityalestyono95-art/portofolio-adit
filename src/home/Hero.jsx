@@ -8,7 +8,7 @@ const Hero = () => {
             </div>
 
             <div className="animation-wrapper">
-                <img src="/icon.avif" alt="icon" />
+                <img src={`${import.meta.env.BASE_URL}icon.avif`} alt="icon" />
 
                 <div className="animation">
                     <span></span>

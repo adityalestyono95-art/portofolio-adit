@@ -5,7 +5,7 @@ const Service = () => {
             <h2>Layanan</h2>
             <div className="service-wrapper">
                 <div className="service shadow">
-                    <img src="/backend.png" alt="backend"/>
+                    <img src={`${import.meta.env.BASE_URL}backend.png`} alt="backend"/>
                     <ul>
                         <li>Node Js</li>
                         <li>Ekspress Js</li>
@@ -14,10 +14,9 @@ const Service = () => {
                         <li>Debuging</li>
                     </ul>
                     <p>Backend</p>
-                    
                 </div>
                 <div className="service shadow">
-                    <img src="/cloud-server.png" alt="backend"/>
+                    <img src={`${import.meta.env.BASE_URL}cloud-server.png`} alt="server"/>
                     <ul>
                         <li>CPanel</li>
                         <li>aaPanel</li>
@@ -26,10 +25,9 @@ const Service = () => {
                         <li>Apache</li>
                     </ul>
                     <p>Server</p>
-                    
                 </div>
                 <div className="service shadow">
-                    <img src="/front-end.png" alt="backend"/>
+                    <img src={`${import.meta.env.BASE_URL}front-end.png`} alt="frontend"/>
                     <ul>
                         <li>HTML</li>
                         <li>CSS</li>

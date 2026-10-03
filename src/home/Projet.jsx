@@ -5,7 +5,7 @@ const Project = () => {
             <h2>Project Saya</h2>
             <div className="app-wrapper">
                 <div className="card shadow">
-                   <img src={`${import.meta.env.BASE_URL}depan-sekolah.jpg`} alt="aplikasi-1"/>
+                   <img src={`${import.meta.env.BASE_URL}depanSekolah.jpg`} alt="aplikasi-1"/>
 
                     <div className="card-body">
                         <p className="card-title">Ngoding Maystery</p>
