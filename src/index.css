@@ -1,0 +1,545 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+  font-family: "Parkinsans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
+}
+
+/* Header */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: white;
+    width: 100%;
+    height: 70px;
+    box-shadow: 0px 2px 7px 1px #000000;
+}
+.shadow {
+     -webkit-box-shadow: 0px 2px 7px 1px #000000; 
+    box-shadow: 0px 2px 7px 1px #000000;
+}
+
+nav {
+    margin: 0 10%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo-container {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.logo-container img {
+    height: 30px;
+}
+
+.logo-container p {
+    font-weight: bold;
+}
+
+.menu-container > ul {
+    display: flex;
+    gap: 1rem;
+}
+
+.menu-container ul li {
+    padding: 10px 15px;
+    border-radius: 5px;
+    list-style: none;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+
+.menu-container a {
+    text-decoration: none;
+    color: black;
+    transition: all 0.5s ease-in-out    ;
+    text-transform: uppercase;
+}
+
+.mobile-menu {
+    display: none;
+}
+.menu-container ul li::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -100%;
+    width: 100%;
+    height: 4px;
+    background-color: blueviolet;
+    transition: 0.5s;
+    transform: translateY(-50%);
+}
+
+.menu-container ul li:hover::before {
+    animation: line 0.5s linear forwards;
+}
+
+.menu-container ul li:hover a {
+    color: white;
+}
+
+/* Hero */
+.hero-container {
+    height: calc(100vh - 70px);
+    display: flex;
+    padding: 0 10%;
+}
+
+.text-wrapper {
+    flex: 1;
+    align-content: center;
+    padding: 10px;
+}
+
+.text-wrapper > h2 {
+    margin-bottom: 15px;
+}
+
+.animation-wrapper {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.animation-wrapper img {
+    width: 300px;
+    height: 300px;
+    position: absolute;
+}
+
+.animation {
+    height: 400px;
+    width: 400px;
+    position: relative;
+}
+
+.animation > span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    border: 2px solid blueviolet;
+    animation: rotate 5s linear infinite;
+}
+
+.animation span:nth-child(1) {
+    border-radius: 32% 68% 59% 41% / 82% 33% 67% 48%;
+}
+.animation span:nth-child(2) {
+    border-radius: 64% 36% 43% 57% / 68% 66% 34% 32%;
+    animation-direction: reverse;
+}
+.animation span:nth-child(3) {
+    border-radius: 42% 58% 52% 48% / 72% 31% 69% 28%;
+}
+
+/* Project */
+.app-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2% 10%;
+    gap: 1rem;
+    height: 100vh;
+}
+
+.app-wrapper {
+    display: flex;
+    align-items: stretch;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+.card {
+    width: 300px;
+    border-radius: 5px;
+    overflow: hidden;
+    cursor: pointer;
+     display: flex;              /* tambahkan */
+    flex-direction: column;     /* tambahkan */ 
+    
+}
+.card-title {
+    font-weight: bold;
+}
+
+.card img {
+    width: 100%;
+    height: 180px;   
+    /* object-fit: cover;
+    object-position: top; */
+    border-radius: 5px;
+    transition: all 0.5s;
+}
+
+.card-text {
+    font-size: 0.9rem;   /* kecilkan supaya teks tidak terlalu panjang */
+    line-height: 1.4;
+}
+
+.card-body a {
+    margin-top: auto;    /* dorong tombol ke bawah kartu */
+}
+
+.card-body > button {
+    margin-top: auto;    /* untuk kartu 3 yang tombolnya tanpa <a> */
+}
+
+
+.card:hover img {
+    transform: scale(1.1);
+}
+
+.card-body {
+    padding: 5px 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: start;
+    flex: 1;
+    
+}
+
+.card-body button {
+    padding: 10px 25px;
+    border-radius: 5px;
+    outline: none;
+    border: 2px solid blueviolet;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    background-color: transparent;
+    transition: all 0.5s ease-in-out;
+}
+
+.card-body button::before {
+    content: "";
+    top: 0;
+    left: 0;
+    position: absolute;
+    height: 100%;
+    width: 0%;
+    background-color: blueviolet;
+    z-index: -1;
+    transition: all 0.5s ease-in-out;
+}
+
+.card-body button:hover::before {
+    width: 100%;
+}
+
+.card-body button:hover {
+    color: white;
+}
+
+/* Services */
+.service-container {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 2% 10%;
+}
+
+.service-container h2 {
+    margin-bottom: 1rem;
+}
+
+.service-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 3rem;
+}
+
+.service {
+    width: 300px;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    border: 1px solid blueviolet;
+    position: relative;
+}
+.service ul {
+    position: absolute;
+    top: 50;
+    transition: all 0.8s;
+}
+
+.service:hover ul {
+    transform: translateX(-50px);
+}
+.service ul li {
+    list-style: none;
+    opacity: 0;
+}
+.service p {
+    position: absolute;
+    bottom: 50px;
+    left: 0;
+    height: 60px;
+    width: 100%;
+    background-color: blueviolet;
+    text-align: center;
+    align-content: center;
+    color: white;
+    transition: all 0.8s;
+    opacity: 0;
+}
+.service:hover p {
+    bottom: 0;
+    opacity: 1;
+}
+.service img {
+    width: 50%;
+    height: 50%;
+    transition: all 0.8s;
+}
+
+.service:hover img {
+    transform: translate(100px, -100px) scale(1.1);
+}
+
+.service ul li:nth-child(1) {
+    --delay: 0.1s;
+}
+.service ul li:nth-child(2) {
+    --delay: 0.2s;
+}
+.service ul li:nth-child(3) {
+    --delay: 0.3s;
+}
+.service ul li:nth-child(4) {
+    --delay: 0.4s;
+}
+.service ul li:nth-child(5) {
+    --delay: 0.5s;
+}
+.service ul li:nth-child(6) {
+    --delay: 0.6s;
+}
+.service ul li:nth-child(7) {
+    --delay: 0.7s;
+}
+
+.service:hover ul li  {
+    animation: slideIn 0.8s forwards;
+    animation-delay: var(--delay);
+}
+
+/* Contact */
+.contact-container {
+    height: calc(100vh - 70px);
+    flex-direction: column;
+    gap: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    height: 350px;
+    width: 350px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 5px;
+  
+}
+
+.form-group input {
+    padding: 5px 10px;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid blueviolet;
+}
+
+.form-group textarea {
+    outline: none;
+    border: 1px solid blueviolet;
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+
+.contact-wrapper button {
+    padding: 10px 0;
+    background-color: transparent;
+    border-radius: 5px;
+    border: 1px solid blueviolet;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.8s;
+}
+
+.contact-wrapper button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: blueviolet;
+    height: 0;
+    z-index: -1;
+    transition: all 0.5s ease-in-out;
+    width: 100%;
+}
+
+.contact-wrapper button:hover::before {
+    height: 100%;
+}
+
+.contact-wrapper button:hover {
+    color: white;
+}
+
+/* Footer */
+footer {
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Animation */
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+
+@keyframes line {
+    0% {
+        left: -100%;
+        height: 4px;
+    }
+
+    50% {
+        left: 0;
+        height: 4px;
+    }
+
+    100% {
+        left: 0;
+        height: 100%;
+        z-index: -1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(0);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(-10px);
+    }
+    
+}
+
+/* Responsive */
+
+@media (max-width:767px) {
+    .menu-container ul {
+    display: none;
+    }
+
+    .mobile-menu {
+        display: inline;
+        cursor: pointer;
+    }
+
+    .bar-1 , .bar-2, .bar-3 {
+        width: 35px;
+        height: 5px;
+        background-color: #333;
+        margin: 6px 0;
+    }
+
+    .menu-container ul.active {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    padding: 1rem 0;
+    background-color: white;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
+    z-index: 100;
+}
+
+    /* Hero */
+    .hero-container {
+        flex-direction: column-reverse;
+    }
+    .text-wrapper h2 , p{
+        text-align: center;
+    }
+
+    .animation-wrapper > img {
+        margin-top: 1rem;
+        height: 280px;
+        width: 280px;
+    }
+
+    .animation {
+        width: 300px;
+        height: 300px;
+    }
+
+    /* Project */
+    .app-container {
+        height: auto;
+    }
+
+    .card .card-text {
+        text-align: justify;
+        text-justify: inter-word;
+        hyphens: auto;          /* opsional: kata panjang dipotong rapi */
+    }
+
+    .card .card-title {
+        text-align: left;       /* judul tetap rata kiri */
+    }
+
+    /* Service */
+    .service-container {
+        height: auto;
+        margin-top: 2rem;
+    }
+}
